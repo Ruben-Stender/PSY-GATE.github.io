@@ -1,6 +1,8 @@
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
+html, body{
+  height: 100%;
+  margin: 0;
+  background-color:#584252;
+  color:azure;
 }
 
 /* Full-width inputs */
@@ -9,7 +11,7 @@ input[type=text], input[type=password] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
@@ -22,6 +24,7 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 5px;
 }
 
 /* Add a hover effect for buttons */
@@ -29,10 +32,10 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Add padding to containers */
@@ -43,18 +46,32 @@ img.avatar {
 .password-text{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 50px;
 }
 .username-text{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 50px;
 }
 
-.login-contents{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.login-contents {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Aligns form to bottom */
+  height: 100%;
+}
+
+.login-picture{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Aligns form to bottom */
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 /* Change styles for span and cancel button on extra small screens */

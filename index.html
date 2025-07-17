@@ -7,22 +7,24 @@
   <title>PSY/GATE</title>
 </head>
 <body>
-  <h1>Hola como estas</h1>
-  <div class="login-contents">
-    <form onsubmit="return login(event)">
-      <div class="login-field">
-        <div class="username-text">
-          <label for="uname"><b>Username</b></label>
-        </div>
-        <input type="text" placeholder="Enter Username" id="uname" required />
-        <div class="password-text">
-          <label for="psw"><b>Password</b></label>
-        </div>
-        <input type="password" placeholder="Enter Password" id="psw" required />
-        <button type="submit">Login</button>
-      </div>
-    </form>
+  <div class="login-picture">
+    <img src="/Pictures/PsyGate.png" alt="Tower Defense Game" class="logo-img" />
   </div>
+    <div class="login-contents">
+      <form onsubmit="return login(event)">
+        <div class="login-field">
+          <div class="username-text">
+            <label for="uname"><b>Username</b></label>
+          </div>
+          <input type="text" placeholder="Enter Username" id="uname" required />
+          <div class="password-text">
+            <label for="psw"><b>Password</b></label>
+          </div>
+          <input type="password" placeholder="Enter Password" id="psw" required />
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
 
   <script>
     function login(event) {
