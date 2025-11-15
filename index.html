@@ -1,49 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="login.css" />
-  <title>PSY/GATE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-  <div class="login-picture">
-    <img src="/Pictures/PsyGate.png" alt="Tower Defense Game" class="logo-img" />
-  </div>
-    <div class="login-contents">
-      <form onsubmit="return login(event)">
-        <div class="login-field">
-          <div class="username-text">
-            <label for="uname"><b>Username</b></label>
-          </div>
-          <input type="text" placeholder="Enter Username" id="uname" required />
-          <div class="password-text">
-            <label for="psw"><b>Password</b></label>
-          </div>
-          <input type="password" placeholder="Enter Password" id="psw" required />
-          <button type="submit">Login</button>
-        </div>
-      </form>
-    </div>
-
-  <script>
-    function login(event) {
-      event.preventDefault();
-
-      const username = document.getElementById("uname").value;
-      const password = document.getElementById("psw").value;
-
-      const correctUsername = "DevTest";      // Change to your chosen username
-      const correctPassword = "testpassword";  // Change to your chosen password
-
-      if (username === correctUsername && password === correctPassword) {
-  window.location.href = "real-site-9a3bc1d4.html";
-} else {
-  alert("Insufficient clearance to proceed");
-}
-
-      return false;
-    }
-  </script>
+  
 </body>
 </html>
