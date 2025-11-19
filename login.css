@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    /* Background Image */
+    background: url("Images/Site\ logo.png") no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+/* Foreground text-logo overlay */
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100vw;   /* fill width */
+    height: 100vh;  /* fill height */
+    object-fit: cover;  /* Cover fits screen */
+    opacity: 0;
+
+    animation: fadeIn 5s ease forwards;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* CRT Glow Overlay */
+.CRT-overlay {
+
+    /* Optional faint scanlines */
+    background: repeating-linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        rgba(0, 0, 0, 0.02) 2px
+    );
+
+    mix-blend-mode: screen;
+    opacity: 0.8;
+}
