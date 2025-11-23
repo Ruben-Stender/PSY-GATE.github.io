@@ -4,7 +4,7 @@ body {
     height: 100vh;
 
     /* Background Image */
-    background: url("Images/Site\ logo.png") no-repeat center center fixed;
+    background: url("Images/PSYGATE\ abyss.png") no-repeat center center fixed;
     background-size: cover;
 
 }
@@ -21,8 +21,23 @@ body {
     object-fit: cover;  /* Cover fits screen */
     opacity: 0;
 
-    animation: fadeIn 5s ease forwards;
+    animation: fadeIn 10s ease forwards;
 }
+
+.rainbow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100vw;   /* fill width */
+    height: 100vh;  /* fill height */
+    object-fit: cover;  /* Cover fits screen */
+    opacity: 0;
+
+    animation: fadeIn 2s ease forwards;
+}
+
 
 
 /* Fade-in animation */
