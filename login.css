@@ -4,9 +4,8 @@ body {
     height: 100vh;
 
     /* Background Image */
-    background: url("Images/PSYGATE\ abyss.png") no-repeat center center fixed;
+    background: url("Images/PSYGATE abyss.png") no-repeat center center fixed;
     background-size: cover;
-
 }
 
 /* Foreground text-logo overlay */
@@ -16,29 +15,28 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 100vw;   /* fill width */
-    height: 100vh;  /* fill height */
-    object-fit: cover;  /* Cover fits screen */
+    max-width: 90vw;      /* responsive width */
+    max-height: 90vh;     /* responsive height */
+    object-fit: contain;  /* keep proper ratio */
     opacity: 0;
 
     animation: fadeIn 10s ease forwards;
 }
 
+/* Rainbow overlay */
 .rainbow {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 100vw;   /* fill width */
-    height: 100vh;  /* fill height */
-    object-fit: cover;  /* Cover fits screen */
+    max-width: 90vw;      
+    max-height: 90vh;
+    object-fit: contain;
     opacity: 0;
 
     animation: fadeIn 2s ease forwards;
 }
-
-
 
 /* Fade-in animation */
 @keyframes fadeIn {
@@ -48,15 +46,23 @@ body {
 
 /* CRT Glow Overlay */
 .CRT-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
-    /* Optional faint scanlines */
+    pointer-events: none;
+
     background: repeating-linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0.03) 0px,
-        rgba(255, 255, 255, 0.03) 1px,
-        rgba(0, 0, 0, 0.02) 2px
+        to bottom,
+        rgba(255, 255, 255, 0.04) 0px,
+        rgba(255, 255, 255, 0.04) 1px,
+        rgba(0, 0, 0, 0.03) 2px
     );
 
     mix-blend-mode: screen;
-    opacity: 0.8;
+    opacity: 0.6;
+
+    z-index: 999999;
 }
