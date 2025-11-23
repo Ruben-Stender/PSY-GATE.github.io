@@ -1,69 +1,62 @@
-/* --- Reset & Background --- */
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
 
-    background: url("Images/Site logo.png") no-repeat center center;
+    /* Background Image */
+    background: url("Images/PSYGATE\ abyss.png") no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
+
 }
 
-/* --- Fade-in Logo --- */
+/* Foreground text-logo overlay */
 .logo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
+    width: 100vw;   /* fill width */
+    height: 100vh;  /* fill height */
+    object-fit: cover;  /* Cover fits screen */
     opacity: 0;
 
-    animation: fadeIn 5s ease forwards;
-    z-index: 10;
+    animation: fadeIn 10s ease forwards;
 }
 
+.rainbow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100vw;   /* fill width */
+    height: 100vh;  /* fill height */
+    object-fit: cover;  /* Cover fits screen */
+    opacity: 0;
+
+    animation: fadeIn 2s ease forwards;
+}
+
+
+
+/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* --- Bloom Overlay --- */
-.bloom-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
-    backdrop-filter: blur(4px);
-    opacity: 0.3;
-    pointer-events: none;
-
-    z-index: 20; /* BELOW CRT */
-}
-
-/* --- CRT Scanline Overlay --- */
+/* CRT Glow Overlay */
 .CRT-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
 
-    pointer-events: none;
-
+    /* Optional faint scanlines */
     background: repeating-linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.07) 0px,
-        rgba(255, 255, 255, 0.07) 1px,
-        rgba(0, 0, 0, 0.04) 2px
+        to top,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 1px,
+        rgba(0, 0, 0, 0.02) 2px
     );
 
     mix-blend-mode: screen;
-    opacity: 1;
-
-    z-index: 9999; /* TOP OF EVERYTHING */
+    opacity: 0.8;
 }
