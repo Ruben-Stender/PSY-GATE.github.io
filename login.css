@@ -1,47 +1,68 @@
+/* --- Reset & Background --- */
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
 
-    /* Background Image */
-    background: url("Images/Site\ logo.png") no-repeat center center fixed;
+    background: url("Images/Site logo.png") no-repeat center center fixed;
     background-size: cover;
-
 }
 
-/* Foreground text-logo overlay */
+/* --- Fade-in Logo --- */
 .logo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 100vw;   /* fill width */
-    height: 100vh;  /* fill height */
-    object-fit: cover;  /* Cover fits screen */
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
     opacity: 0;
 
     animation: fadeIn 5s ease forwards;
+    z-index: 10;
 }
 
-
-/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* CRT Glow Overlay */
-.CRT-overlay {
+/* --- Bloom Overlay --- */
+.bloom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 
-    /* Optional faint scanlines */
+    backdrop-filter: blur(4px);
+    opacity: 0.3;
+    pointer-events: none;
+
+    z-index: 20; /* BELOW CRT */
+}
+
+/* --- CRT Scanline Overlay --- */
+.CRT-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+
     background: repeating-linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0.03) 0px,
-        rgba(255, 255, 255, 0.03) 1px,
-        rgba(0, 0, 0, 0.02) 2px
+        to bottom,
+        rgba(255, 255, 255, 0.07) 0px,
+        rgba(255, 255, 255, 0.07) 1px,
+        rgba(0, 0, 0, 0.04) 2px
     );
 
     mix-blend-mode: screen;
-    opacity: 0.8;
+    opacity: 1;
+
+    z-index: 9999; /* TOP OF EVERYTHING */
 }
