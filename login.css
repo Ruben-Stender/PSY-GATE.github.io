@@ -53,7 +53,7 @@ body {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 9999;
 }
 
 /* Bloom — SAFE VERSION (no blend mode) */
@@ -141,4 +141,45 @@ body {
     100% {
         transform: translateY(calc(100vh + 100px)); /* end fully below viewport */
     }
+}
+
+.crt-vignette {
+    position: fixed;
+    inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+    pointer-events: none;     /* doesn't block clicks */
+    z-index: 9998;            /* below any overlays like scanlines */
+    
+    /* Radial gradient for vignette */
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0) 90%,   /* center is transparent */
+        rgba(0,0,0,0.5) 100%  /* corners are dark */
+    );
+}
+
+.crt-flicker {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10000; /* above most content */
+    
+    /* Fullscreen transparent overlay */
+    background: rgba(255,255,255,0.3); /* very subtle light flashes */
+    
+    /* Flicker animation */
+    animation: flicker 0.1s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.02; }
+    10% { opacity: 0.08; }
+    20% { opacity: 0.03; }
+    30% { opacity: 0.07; }
+    40% { opacity: 0.02; }
+    50% { opacity: 0.06; }
+    60% { opacity: 0.03; }
+    70% { opacity: 0.05; }
+    80% { opacity: 0.02; }
+    90% { opacity: 0.07; }
+    100% { opacity: 0.02; }
 }
