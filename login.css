@@ -53,7 +53,7 @@ body {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 9998;
+    z-index: 9999;
 }
 
 /* Bloom — SAFE VERSION (no blend mode) */
@@ -141,4 +141,18 @@ body {
     100% {
         transform: translateY(calc(100vh + 100px)); /* end fully below viewport */
     }
+}
+
+.crt-vignette {
+    position: fixed;
+    inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+    pointer-events: none;     /* doesn't block clicks */
+    z-index: 9998;            /* below any overlays like scanlines */
+    
+    /* Radial gradient for vignette */
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0) 90%,   /* center is transparent */
+        rgba(0,0,0,0.5) 100%  /* corners are dark */
+    );
 }
